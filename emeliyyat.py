@@ -39,14 +39,18 @@ def arxaplan():
     global window
     ctk.set_appearance_mode("dark")
     ctk.set_default_color_theme("blue")
-    window = ctk.CTk()
+
+    # əsas pəncərə purple fonlu
+    window = ctk.CTk(fg_color="#4B0082")  # Milyonçu fonundakı purple rəng
     window.title("Kim Milyoner Olmaq İstəyir?")
     window.geometry("900x600+300+80")
     window.resizable(False, False)
-    # əsas frame
-    window.main_frame = ctk.CTkFrame(window, width=880, height=580, corner_radius=10)
-    window.main_frame.place(x=10, y=10)
 
+    # əsas frame şəffaf saxlanılır ki, arxadakı purple görünsün
+    window.main_frame = ctk.CTkFrame(window, width=880, height=580,
+                                     corner_radius=10,
+                                     fg_color="transparent")
+    window.main_frame.place(x=10, y=10)
 # --- Başlanğıc ekran (Ad/Soyad soruşur) ---
 def basla_ekrani():
     temizle_sual_panel()
